@@ -2,9 +2,11 @@ package cartomanti;
 
 public class Carta {
 
-	int numero;
-	double valore;
-	String nome;
-	String seme;
-	boolean coperta;
+	private int numero;
+	private double valore;
+	private String nome;
+	private String seme;
+	private boolean coperta;
+
 }
+
