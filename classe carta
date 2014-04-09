@@ -1,0 +1,10 @@
+package cartomanti;
+
+public class Carta {
+
+	int numero;
+	double valore;
+	String nome;
+	String seme;
+
+}
