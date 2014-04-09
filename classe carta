@@ -6,5 +6,5 @@ public class Carta {
 	double valore;
 	String nome;
 	String seme;
-
+	boolean coperta;
 }
