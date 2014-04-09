@@ -1,0 +1,31 @@
+Classe Carta:
+-	‘numero’
+-	‘seme’
+-	‘valore
+-	‘nome’
+-	‘coperta’
+Classe Giocatore:
+-	‘Nome’
+-	‘Punteggio’
+-	‘Carte prese’
+-	‘Turno’
+Classe Gioco: 	
+-	‘Mescola’ le carte    
+-	‘Metodo dare ’   prima carta prima al giocatore 
+-	Controllo e io giocatore vedo la carta
+-	Giocatore decide se vuole altra carta
+-	‘metodo dare ’ seconda carta al giocatore
+-	Controllo e io giocatore vedo la carta che starà scoperta
+-	Calcola i punti
+-	Decisione se è vera il giocatore chiama altra carta
+- metodo dare                                                                                                            - il suo turno diventa false
+- controllo                                                                                                                   -   e tocca al mazziere                  
+- calcola
+-	Il mazziere ha la prima carta scoperta
+-	Controlla e decide se vuole l’altra carta in base al punteggio scoperto del giocatore
+-	E decide come se il giocatore avesse 7 
+-	Chiede le carte finché il suo punteggio è uguale o minore a 7
+Confronto punteggi di giocatore e mazziere
+Se il giocatore ha il punteggio maggiore a mazziere vince (il punteggio di giocatore deve essere inferiore o uguale a 7,5) 
+Classe Start:
+-	Chiama la classe Gioco
