@@ -6,6 +6,11 @@ public class Card
 	private double value;
 	private boolean discovered;
 	private String name;
+	
+	public Card()
+	{
+		
+	}
 
 	public Card(int number,String seed)
 	{
@@ -13,6 +18,16 @@ public class Card
 		this.seed = seed;
 		this.setValue();
 		this.discovered = false;
+	}
+	
+	public void setNumber(int number)
+	{
+		this.number = number;
+	}
+	
+	public void setSeed(String seed)
+	{
+		this.seed = seed;
 	}
 
 	private void setValue()

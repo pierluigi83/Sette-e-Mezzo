@@ -32,7 +32,7 @@ public class Game
 
   	public double modifyScore(double score)
   	{
-  		if(score) // è intero
+  		if(score == Math.floor(score)) // è intero
 		{
 		//score = 7.5;
 			return 7.5 - score;
@@ -96,25 +96,33 @@ public class Game
 
 	public static void main(String[] args)
 	{
+		Game g = new Game();
 		Player p = new Player("Pierluigi");
+		Player m = new Player("Mazziere");
+		Card[] c;
+		c = new Card[40];
 		// inizializza carte
 		for(int i = 0; i < 40; i++)
 		{
 			if (i < 10)
 			{
-			Card c[i] = new Card(i,"spade")
+			c[i].setNumber(i);
+			c[i].setSeed("spade");
 			}
 			else if (i < 20)
 			{
-				Card c[i] = new Card(i,"denari")
+				c[i].setNumber(i-10);
+				c[i].setSeed("denari");
 			}
 			else if (i<30)
 			{
-				Card c[i] = new Card(i,"coppe")
+				c[i].setNumber(i-20);
+				c[i].setSeed("coppe");
 			}
 			else if (i<40)
 			{
-				Card c[i] = new Card(i,"bastoni")
+				c[i].setNumber(i-30);
+				c[i].setSeed("bastoni");
 			}
 		}
 		// mescola carte
@@ -123,15 +131,17 @@ public class Game
 		{
 			maze[i] = i;
 		}
-		maze = shakeMaze(maze);
+		maze = g.shakeMaze(maze);
 		// dai carta al giocatore
-		p.getCard(0);
-		p.setScore(c[maze[0]].getValue());
+		int i = 0;
+		p.getCard(i);
+		p.setScore(c[maze[i]].getValue());
 		boolean give = true;
+		i++;
 		// dai altre carte al giocatore
 		while(give)
 		{
-			system.out.println("Vuoi un'altra carta?");
+			System.out.println("Vuoi un'altra carta?");
 			scanner();
 			if (scanner == "si")
 			{
@@ -146,9 +156,9 @@ public class Game
 			else
 			{
 				give = false;
-				if (checkMatta(0,i,c,maze))
+				if (g.checkMatta(0,i,c,maze))
 				{
-					p.setScore(modifyScore(p.getScore())); // è intero)
+					p.setScore(g.modifyScore(p.getScore())); // è intero)
 				}
 			}
 			i++;
@@ -160,18 +170,18 @@ public class Game
 		{
 			m.getCard(i);
 			m.setScore(c[maze[i]].getValue());
-			if (checkMatta(a,i,c,maze))
+			if (g.checkMatta(a,i,c,maze))
 			{
-				p.setScore(modifyScore(p.getScore()); // è intero)
+				p.setScore(g.modifyScore(p.getScore())); // è intero)
 			}
 			
 			if (m.getScore() > 7.5)
 			{
-				println("Il mazziere ha sballato, hai vinto!");
+				System.out.println("Il mazziere ha sballato, hai vinto!");
 				return;
 			}
 			double treshold = 7.5 - m.getScore();
-			if (chances(i,c,maze,treshold) > 0.5)
+			if (g.chances(i,c,maze,treshold) > 0.5)
 			{
 				give = true;
 			}
@@ -182,6 +192,6 @@ public class Game
 			i++;
 		}
 		// determina vincitore
-		whoWins(p.getScore(),m.getScore(),p.getName());
+		g.whoWins(p.getScore(),m.getScore(),p.getName());
 	}
 }

@@ -21,7 +21,7 @@ public class Player
 		return tokencards;
 	}
 
-	public void setScore(int value)
+	public void setScore(double value)
 	{
 		this.score += value;
 
