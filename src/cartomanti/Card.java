@@ -1,22 +1,21 @@
 package cartomanti;
-
 public class Card
 {
 	private int number;
-	private double value;
-	private String name;
 	private String seed;
-	private boolean covered;
-	private int id;
-	public Card(int id,int number,String seed)
+	private double value;
+	private boolean discovered;
+	private String name;
+
+	public Card(int number,String seed)
 	{
-		this.id = id;
-		this.number =number;
+		this.number = number;
 		this.seed = seed;
-		this.covered = true;
-		
+		this.setValue();
+		this.discovered = false;
 	}
-	public void setValue()
+
+	private void setValue()
 	{
 		if (this.number < 8)
 		{
@@ -26,8 +25,13 @@ public class Card
 		{
 			this.value = 0.5;
 		}
-		
 	}
+
+	public double getValue()
+	{
+		return this.value;
+	}
+
 	public boolean checkMatta()
 	{
 		if (this.number == 10 && this.seed == "denari")
@@ -36,17 +40,26 @@ public class Card
 		}
 		return false;
 	}
-	public void uncover()
+	
+	public void discover()
 	{
-		this.covered = false;
+		this.discovered = true;
 	}
+
 	public void print()
 	{
 		
+			System.out.println(" ************ ");
+			System.out.println(" * " + " * ");
+			System.out.println(" * " + " * ");
+			System.out.println(" * " + name + " * ");
+			System.out.println(" * " + " DI " + " * ");
+			System.out.println(" * " + seed + " * ");
+			System.out.println(" * " + " " + number + " * ");
+			System.out.println(" * " + " * ");
+			System.out.println(" * " + " * ");
+			System.out.print(" ************ ");
+			
 	}
-	
-	
-	
-	
 
 }
