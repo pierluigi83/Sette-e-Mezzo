@@ -1,0 +1,8 @@
+package cartomanti;
+
+public class Giocatore {
+	private	String nome;
+	private double punteggio;
+	private int [] carte_prese;
+	private boolean turno;
+}
