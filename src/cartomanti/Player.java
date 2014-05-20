@@ -2,8 +2,6 @@ package cartomanti;
 public class Player
 {
 	private String name;
-	private boolean turn;
-	private int[] tokencards;
 	private double score;
 
 	public Player(String name)
@@ -11,20 +9,15 @@ public class Player
 		this.name = name;
 	}
 
-	public void getCard(int i)
-	{
-		tokencards[i] = i; 
-	}
-
-	public int[] showCards()
-	{
-		return tokencards;
-	}
-
 	public void setScore(double value)
 	{
 		this.score += value;
 
+	}
+	
+	public void resetScore()
+	{
+		this.score = 0;
 	}
 	
 	public double getScore()

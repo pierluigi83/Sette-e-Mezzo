@@ -6,30 +6,16 @@ public class Card
 	private double value;
 	private boolean discovered;
 	private String name;
-	
-	public Card()
-	{
 		
-	}
-
-	public Card(int number,String seed)
+	public Card(int number,String seed,String name)
 	{
 		this.number = number;
 		this.seed = seed;
+		this.name = name;
 		this.setValue();
 		this.discovered = false;
 	}
-	
-	public void setNumber(int number)
-	{
-		this.number = number;
-	}
-	
-	public void setSeed(String seed)
-	{
-		this.seed = seed;
-	}
-
+			
 	private void setValue()
 	{
 		if (this.number < 8)
@@ -56,25 +42,60 @@ public class Card
 		return false;
 	}
 	
-	public void discover()
+	public String getSeed()
+	{
+		return seed;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getNumber()
+	{
+		return number;
+	}
+	
+	public void discover() //può servire quando giocano più players
 	{
 		this.discovered = true;
 	}
+	
+	public void stampa(int lun,String var)
+	{
+		int spacesleft = (14 - lun)/2;
+		int spacesright = (14- lun - spacesleft);
+		for (int i = 0; i< spacesleft;i++)
+		{
+			System.out.print(" ");
+			
+		}
+		System.out.print(var);
+		for (int i=0; i<spacesright;i++)
+		{
+			System.out.println(" ");
+		}
+	}
+	
 
 	public void print()
 	{
+		System.out.println("**************");
+		System.out.printf("*%10s  *\n"," ");
+		System.out.printf("*%10s  *\n"," ");
+		System.out.printf("*%12s*\n",StringUtils.getCenteredString(12, name));
+		System.out.printf("*%10s  *\n","DI   ");
+		System.out.printf("*%12s*\n",StringUtils.getCenteredString(12, seed));
+		System.out.printf("*%12s*\n",StringUtils.getCenteredString(12, number+""));
+		System.out.printf("*%10s  *\n"," ");
+		System.out.printf("*%10s  *\n"," ");
+		System.out.println("**************");
 		
-			System.out.println(" ************ ");
-			System.out.println(" * " + " * ");
-			System.out.println(" * " + " * ");
-			System.out.println(" * " + name + " * ");
-			System.out.println(" * " + " DI " + " * ");
-			System.out.println(" * " + seed + " * ");
-			System.out.println(" * " + " " + number + " * ");
-			System.out.println(" * " + " * ");
-			System.out.println(" * " + " * ");
-			System.out.print(" ************ ");
-			
+		
 	}
+	
+
+	
 
 }

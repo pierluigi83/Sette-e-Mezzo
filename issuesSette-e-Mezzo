@@ -1,0 +1,24 @@
+issues:
+1. print MATTA fixed!
+2. print carte a capo
+3. visualizzare numero carte corretto fixed!
+3. visualizza score player corretto con MATTA fixed!
+4. aggiusta logica mazziere con MATTA  fixed!
+
+
+
+2.
+in while player
+if (i>6)
+offset = 14;
+
+in while mazziere
+if (((i>7) && (offset == 14)) || (i>12))
+{
+	ROW_OFFSET+offset;
+}
+solved!
+
+
+
+
